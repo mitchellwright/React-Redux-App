@@ -24,7 +24,7 @@ const HeroSearch = () => {
           aria-describedby="hero-name"
         />
       </div>
-      <HeroInfoButton heroInput={heroInput} />
+      <HeroInfoButton heroInput={heroInput} setHeroInput={setHeroInput} />
     </div>
   );
 };
