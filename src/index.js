@@ -1,18 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
 import "./tailwind.output.css";
 
-function hotsReducer() {
-  return {
-    title: "Hello world! I'm in the Redux store!",
-  };
-}
+import { hotsReducer } from "./reducers/hotsReducer";
 
-const store = createStore(hotsReducer);
+const store = createStore(hotsReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
